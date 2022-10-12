@@ -15,16 +15,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnDeal.setOnClickListener {
-            val res = resources.getIdentifier(
+            val res = IntArray(5)
+            for(i in res.indices) {
+            res[i] = resources.getIdentifier(
                 getCardName(Random.nextInt(52)),
                 "drawable",
-                packageName
-            )
-            binding.card1.setImageResource(res)
-            binding.card2.setImageResource(res)
-            binding.card3.setImageResource(res)
-            binding.card4.setImageResource(res)
-            binding.card5.setImageResource(res)
+                packageName)
+            }
+            binding.card1.setImageResource(res[0])
+            binding.card2.setImageResource(res[1])
+            binding.card3.setImageResource(res[2])
+            binding.card4.setImageResource(res[3])
+            binding.card5.setImageResource(res[4])
         }
     }
 
